@@ -1,0 +1,35 @@
+class Solution {
+public:
+    string addStrings(string num1, string num2) {
+        vector<int> n1;
+        vector<int> n2;
+        for(char x:num1)
+            n1.push_back(x-'0');
+        for(char x:num2)
+            n2.push_back(x-'0');
+        int i=n1.size()-1;
+        int j=n2.size()-1;
+        long long no1=0;
+        long long no2=0;
+        while(i>=0)
+        {
+            for(int x:n1)
+            {
+                no1=no1+x*pow(10,i);
+                i--;
+            }
+            
+        }
+         while(j>=0)
+        {
+            for(int x:n2)
+            {
+                no2=no2+x*pow(10,j);
+                j--;
+            }
+            
+        }
+        long long sum=no1+no2;
+        return to_string(sum);
+    }
+};
