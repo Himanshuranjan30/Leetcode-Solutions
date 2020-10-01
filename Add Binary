@@ -1,0 +1,24 @@
+class Solution {
+public:
+    string addBinary(string a, string b) {
+       int carry=0;
+        int m=a.size(),n=b.size();
+        int i=m-1,j=n-1;
+        string ans;
+        while(carry!=0 || i>=0 || j>=0)
+        {
+            int x,y;
+            if(i>=0)  x = a[i]-'0';
+            else x=0;
+            if(j>=0)  y = b[j]-'0';
+            else y=0;
+            int sum=(x+y+carry)%2;
+            carry= (x+y+carry)/2;
+            ans+=to_string(sum);
+            i--;
+            j--;
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
