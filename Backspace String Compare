@@ -1,0 +1,33 @@
+class Solution {
+public:
+    bool backspaceCompare(string S, string T) {
+         string::iterator it;
+        string st;
+        string tt;
+        for(it=S.begin();it!=S.end();it++)
+        {
+            if(*it=='#')
+            {  if(!st.empty())
+                 st.pop_back();
+            }
+            else
+               st.push_back(*it);
+            
+            
+        }
+        for(it=T.begin();it!=T.end();it++)
+        {
+            if(*it=='#')
+            {  if(!tt.empty())
+                 tt.pop_back();
+            }
+            else
+             tt.push_back(*it);
+            
+            
+        }
+        if(st==tt)
+            return true;
+        return false;
+    }
+};
