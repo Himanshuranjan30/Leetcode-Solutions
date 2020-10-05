@@ -1,7 +1,7 @@
 class Solution {
 public:
     int binaryGap(int n) {
-        string binary=std::bitset<1000>(n).to_string();
+        string binary=std::bitset<32>(n).to_string();
         cout<<binary<<endl;
         std::size_t pos=binary.find("1");
         binary=binary.substr(pos);
